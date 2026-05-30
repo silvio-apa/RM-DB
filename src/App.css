@@ -71,3 +71,25 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
+.character-detail {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 24px;
+  background: #1f2937;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.character-detail img {
+  width: 280px;
+  border-radius: 12px;
+}
+
+.character-detail h1 {
+  margin-top: 0;
+}
+
+.character-detail p {
+  font-size: 18px;
+}
