@@ -8,8 +8,8 @@ function Navbar() {
 
             <div className="nav-links">
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/Characters">Characters</NavLink>
-                <NavLink to="/Favorites">Favorites</NavLink>
+                <NavLink to="/characters">Characters</NavLink>
+                <NavLink to="/favorites">Favorites</NavLink>
             </div>
         </nav>
     );

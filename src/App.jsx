@@ -13,9 +13,9 @@ function App() {
       <main className="page">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/Characters" element={<CharactersPage />} />
-          <Route path="/Characters/:id" element={<CharacterDetailPage />} />
-          <Route path="/Favorites" element={<FavoritesPage />} />
+          <Route path="/characters" element={<CharactersPage />} />
+          <Route path="/characters/:id" element={<CharacterDetailPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
         </Routes>
       </main>
     </>
