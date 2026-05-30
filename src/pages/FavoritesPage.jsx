@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { deleteFavorite, getFavorites } from "../services/favoritesApi";
+import { deleteFavorite, getFavorites, updateFavorite } from "../services/favoritesApi";
 
 
 function FavoritesPage() {
@@ -43,6 +43,19 @@ function FavoritesPage() {
         return <p>Error: {errorMessage}</p>;
     }
 
+    async function handleUpdateNote(id, note) {
+        try {
+            const updatedFavorite = await updateFavorite(id, { note });
+
+            const updatedFavorites = favorites.map((favorite) =>
+                favorite.id === id ? updatedFavorite : favorite
+            );
+            setFavorites(updatedFavorites);
+        } catch (error) {
+            setErrorMessage(error.message);
+        }
+    }
+
     return (
         <section>
             <h1>Favorites</h1>
@@ -64,7 +77,14 @@ function FavoritesPage() {
 
                             <Link to={`/characters/${favorite.characterId}`}>View Details</Link>
 
-                            <br />
+                            <label className="note-label">
+                                Personal Note:
+                                <textarea
+                                className="note-textarea"
+                                    value={favorite.note || ""}
+                                    onChange={(event) => handleUpdateNote(favorite.id, event.target.value)}
+                                />
+                            </label>
 
                             <button onClick={() => handleDeleteFavorite(favorite.id)}>
                                 Remove from Favorites

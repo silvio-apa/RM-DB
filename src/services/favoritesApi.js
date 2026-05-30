@@ -44,3 +44,17 @@ export async function deleteFavorite(id) {
         throw new Error("Favorite could not be deleted.");
     }
 }
+export async function updateFavorite(id, updatedData) {
+    const response = await fetch(`${BASE_URL}/favorites/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+    });
+
+    if (!response.ok) {
+        throw new Error("Favorite could not be updated.");
+    }
+    return response.json();
+}
