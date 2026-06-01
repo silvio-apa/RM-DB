@@ -146,6 +146,34 @@ body {
 .search-input::placeholder {
   color: #9ca3af;
 }
+
+/* Formular für die Charaktersuche */
+.search-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Suchfeld innerhalb vom Suchformular */
+.search-form .search-input {
+  margin: 0;
+}
+
+/* Buttons im Suchformular */
+.search-form button {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background: #16a34a;
+}
 /* Pagination / Seitenwechsel unten */
 .pagination {
   position: sticky;

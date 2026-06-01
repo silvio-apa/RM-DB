@@ -6,7 +6,7 @@ import {
   getFavoriteByCharacterId,
 } from "../services/favoritesApi";
 
-function CharacterDetailsPage() {
+function CharacterDetailPage() {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -68,7 +68,7 @@ function CharacterDetailsPage() {
     <section>
       <Link to="/characters">Back to Characters</Link>
 
-      <div className="character-details">
+      <div className="character-detail">
         <img src={character.image} alt={character.name} />
         <div>
           <h1>{character.name}</h1>
@@ -87,4 +87,4 @@ function CharacterDetailsPage() {
   );
 }
 
-export default CharacterDetailsPage;
+export default CharacterDetailPage;

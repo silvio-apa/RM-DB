@@ -6,6 +6,7 @@ function CharactersPage() {
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -29,8 +30,15 @@ function CharactersPage() {
     loadCharacters();
   }, [searchTerm, currentPage, reloadKey]);
 
-  function handleSearchChange(event) {
-    setSearchTerm(event.target.value);
+  function handleSearchSubmit(event) {
+    event.preventDefault();
+    setSearchTerm(searchInput);
+    setCurrentPage(1);
+  }
+
+  function handleClearSearch() {
+    setSearchInput("");
+    setSearchTerm("");
     setCurrentPage(1);
   }
 
@@ -59,14 +67,20 @@ function CharactersPage() {
         Browse characters from Rick and Morty, search for your favorite ones and
         open their detail pages to learn more about them.
       </p>
+      <form className="search-form" onSubmit={handleSearchSubmit}>
+        <input
+          className="search-input"
+          type="text"
+          value={searchInput}
+          onChange={(event) => setSearchInput(event.target.value)}
+          placeholder="Search characters by name..."
+        />
+        <button type="submit">Search</button>
 
-      <input
-        className="search-input"
-        type="text"
-        value={searchTerm}
-        onChange={handleSearchChange}
-        placeholder="Search characters by name..."
-      />
+        <button type="button" onClick={handleClearSearch}>
+          Clear
+        </button>
+      </form>
 
       {isLoading && <p>Loading characters...</p>}
       {!isLoading && errorMessage && (
