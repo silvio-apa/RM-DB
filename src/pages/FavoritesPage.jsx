@@ -48,7 +48,6 @@ function FavoritesPage() {
   }
 
   async function handleSaveNote(id, note) {
-    
     try {
       setErrorMessage("");
       const updatedFavorite = await updateFavorite(id, { note });
