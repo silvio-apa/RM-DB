@@ -33,7 +33,7 @@ function CharactersPage() {
         loadCharacters();
     }, [searchTerm, currentPage, reloadKey]);
 
-    function handlesearchChange(event) {
+    function handleSearchChange(event) {
         setSearchTerm(event.target.value);
         setCurrentPage(1);
     }
@@ -68,7 +68,7 @@ function CharactersPage() {
                 className="search-input"
                 type="text"
                 value={searchTerm}
-                onChange={handlesearchChange}
+                onChange={handleSearchChange}
                 placeholder="Search characters by name..."
             />
 
