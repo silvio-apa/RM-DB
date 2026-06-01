@@ -248,3 +248,31 @@ body {
 .delete-button:hover {
   background: #b91c1c;
 }
+
+/* Startseite mit Text und grossem Bild */
+.home-page {
+  text-align: center;
+}
+
+.home-text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.home-text h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.home-text p {
+  line-height: 1.6;
+}
+
+.home-image {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 32px auto 0;
+  border-radius: 16px;
+}
